@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+/* --------------- Variables ------------ */
+:root {
+  --primClr-gold: hsl(35, 77%, 62%);
+  --primClr-red: hsl(5, 85%, 63%);
+
+  --neutral-Owhite: hsl(36, 100%, 99%);
+  --neutral-Lgray: hsl(233, 8%, 79%);
+  --neutral-darkblue: hsl(236, 13%, 42%);
+  --neutral-Xdarkblue: hsl(240, 100%, 5%);
+}
+
+/* ---------------/Variables ------------ */
+/* --------------- Global Rules ------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin-inline: auto;
+  background-color: var(--neutral-Owhite);
+}
+
+p {
+  font-size: 15px;
+  color: var(--neutral-Lgray);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1199px;
+  height: 100%;
+  padding: 0 30px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 350px;
+    padding: 0 15px;
+  }
+
+  header .container {
+    font-size: 13px;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  background-color: var(--primClr-red);
+  color: var(--neutral-Owhite);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+button:hover {
+  background-color: var(--neutral-Xdarkblue);
+}
+/* ---------------/Global Rules ------------ */
+
+/* --------------- Reset ------------ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* ---------------/Reset ------------ */
+/* --------------- header ------------ */
+header {
+  padding-block: 4.5rem;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .container ul {
+  display: flex;
+  gap: 2.7rem;
+}
+
+header .container ul li a {
+  text-decoration: none;
+  color: var(--neutral-darkblue);
+}
+
+header .container ul li a:hover {
+  color: var(--primClr-red);
+}
+
+header .logo {
+  flex-basis: 10%;
+}
+
+header .icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-block: 1.25rem;
+  }
+
+  header .container ul {
+    display: none;
+  }
+
+  header .container .icon {
+    width: 90%;
+    display: grid;
+    place-items: flex-end;
+  }
+}
+/* ---------------/header ------------ */
+
+/* --------------- main ------------ */
+
+main .container .left-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "bg bg right"
+    "main text right"
+    "box box box";
+  gap: 2rem;
+}
+
+.container .left-col .bg {
+  grid-area: bg;
+}
+
+.container .left-col .main--head {
+  grid-area: main;
+}
+
+.container .left-col .text {
+  grid-area: text;
+}
+
+.container .left-col .main--head .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container .left-col .main--head h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+main .container .right-col {
+  grid-area: right;
+  background-color: var(--neutral-Xdarkblue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+main .container .right-col h2 {
+  color: var(--primClr-gold);
+}
+
+main .container .right-col .snippet {
+  position: relative;
+}
+
+.snippet:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--neutral-Lgray);
+  bottom: -35.5px;
+}
+
+main .container .right-col .snippet h3 {
+  color: var(--neutral-Owhite);
+}
+
+main .container .right-col .snippet h3:hover {
+  color: var(--primClr-gold);
+  cursor: pointer;
+}
+
+.container .left-col .card {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+
+.container .left-col .card h3 {
+  color: var(--neutral-Lgray);
+  font-size: 1.75rem;
+}
+
+.container .left-col .card h4:hover {
+  color: var(--primClr-red);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  main .container .left-col {
+    display: block;
+  }
+
+  .container .left-col .text {
+    margin-top: 1rem;
+  }
+
+  main .container .right-col {
+    margin-block: 3rem;
+    min-height: 520px;
+  }
+
+  .container .left-col .card {
+    margin-block: 2rem;
+  }
+}
