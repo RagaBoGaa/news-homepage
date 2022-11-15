@@ -9,7 +9,6 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
   - [Links](#links)
   - [Built with](#built-with)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
